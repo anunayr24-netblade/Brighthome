@@ -122,50 +122,44 @@ const InteriorDesigner = () => {
                   Why List Your Interior Design Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Premium Client Access
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners and businesses ready to invest in quality interior design.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Premium Client Access",
+                      desc: "Connect with homeowners and businesses ready to invest in quality interior design."
+                    },
+                    {
+                      icon: "💰",
+                      title: "High-Value Projects",
+                      desc: "Access full home renovations and commercial projects that significantly boost revenue."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Portfolio Showcase",
+                      desc: "Display your best work with high-quality images and attract clients matching your style."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Efficient Project Flow",
+                      desc: "Manage consultations, proposals, and client communication seamlessly on our platform."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-purple-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        High-Value Projects
-                      </h4>
-                      <p className="text-gray-700">
-                        Access full home renovations and commercial projects that significantly boost revenue.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Portfolio Showcase
-                      </h4>
-                      <p className="text-gray-700">
-                        Display your best work with high-quality images and attract clients matching your style.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Efficient Project Flow
-                      </h4>
-                      <p className="text-gray-700">
-                        Manage consultations, proposals, and client communication seamlessly on our platform.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -175,61 +169,49 @@ const InteriorDesigner = () => {
                   How to List Your Interior Design Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register with your design credentials, qualifications, and years of experience."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit identity proof and professional credentials for verification within 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Upload your portfolio with before/after photos, design styles, services, and pricing."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Inquiries",
+                      desc: "Once verified, start receiving consultation requests and design project inquiries."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-purple-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register with your design credentials, qualifications, and years of experience.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit identity proof and professional credentials for verification within 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Upload your portfolio with before/after photos, design styles, services, and pricing.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Inquiries
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, start receiving consultation requests and design project inquiries.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-purple-50 border-l-4 border-purple-600 p-6 rounded">
+                <div className="mt-8 bg-purple-50 border-l-4 border-purple-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-purple-600">Pro Tip:</strong> Designers with stunning portfolios, 
                     detailed style descriptions, and client testimonials get 7x more project inquiries!
@@ -243,48 +225,52 @@ const InteriorDesigner = () => {
                   Benefits of Listing Your Interior Design Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Scale your design business with high-value residential and commercial projects.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Quality Clients</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with serious clients who appreciate good design and are ready to invest.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Milestone Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Secure milestone-based payments through our platform for larger projects.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Portfolio Building</h4>
-                    <p className="text-gray-700 text-sm">
-                      Showcase completed projects with professional photography and client reviews.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Industry Trends</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access latest design trends, material guides, and business development resources.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Featured Designer Status</h4>
-                    <p className="text-gray-700 text-sm">
-                      Top designers get premium placement, magazine features, and exclusive opportunities.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Scale your design business with high-value residential and commercial projects."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Quality Clients",
+                      desc: "Work with serious clients who appreciate good design and are ready to invest."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Milestone Payments",
+                      desc: "Secure milestone-based payments through our platform for larger projects."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Portfolio Building",
+                      desc: "Showcase completed projects with professional photography and client reviews."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Industry Trends",
+                      desc: "Access latest design trends, material guides, and business development resources."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Featured Designer Status",
+                      desc: "Top designers get premium placement, magazine features, and exclusive opportunities."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-purple-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-purple-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

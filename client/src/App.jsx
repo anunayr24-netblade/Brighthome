@@ -7,6 +7,21 @@ import BecomePartner from "./pages/BecomePartner";
 import Blog from "./pages/Blog";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Pricing from "./pages/Pricing";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+// Category Pages
+import RealEstate from "./pages/categories/RealEstate";
+import Vehicles from "./pages/categories/Vehicles";
+import HomeServices from "./pages/categories/HomeServices";
+import Jobs from "./pages/categories/Jobs";
+import BuySell from "./pages/categories/BuySell";
+import Education from "./pages/categories/Education";
+import Health from "./pages/categories/Health";
+import Events from "./pages/categories/Events";
+import Pets from "./pages/categories/Pets";
+import BusinessServices from "./pages/categories/BusinessServices";
 
 // Service Detail Pages
 import PackersMovers from "./pages/services/PackersMovers";
@@ -26,6 +41,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/properties" element={<Properties />} />
         <Route path="/services" element={<Services />} />
@@ -34,6 +50,21 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Category Routes */}
+        <Route path="/category/real-estate" element={<RealEstate />} />
+        <Route path="/category/vehicles" element={<Vehicles />} />
+        <Route path="/category/home-services" element={<HomeServices />} />
+        <Route path="/category/jobs" element={<Jobs />} />
+        <Route path="/category/buy-sell" element={<BuySell />} />
+        <Route path="/category/education" element={<Education />} />
+        <Route path="/category/health" element={<Health />} />
+        <Route path="/category/events" element={<Events />} />
+        <Route path="/category/pets" element={<Pets />} />
+        <Route path="/category/business-services" element={<BusinessServices />} />
         
         {/* Service Detail Routes */}
         <Route path="/services/packers-movers" element={<PackersMovers />} />

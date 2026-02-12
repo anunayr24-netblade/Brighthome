@@ -123,50 +123,44 @@ const HouseCleaning = () => {
                   Why List Your Cleaning Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Steady Client Base
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners and businesses looking for reliable cleaning services daily.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Steady Client Base",
+                      desc: "Connect with homeowners and businesses looking for reliable cleaning services daily."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Recurring Revenue",
+                      desc: "Build a base of regular clients with weekly or monthly cleaning subscriptions."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Build Trust & Reviews",
+                      desc: "Collect verified reviews and build a reputation as a trusted cleaning professional."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Easy Scheduling",
+                      desc: "Manage bookings, track schedules, and communicate with clients through one dashboard."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-teal-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Recurring Revenue
-                      </h4>
-                      <p className="text-gray-700">
-                        Build a base of regular clients with weekly or monthly cleaning subscriptions.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Build Trust & Reviews
-                      </h4>
-                      <p className="text-gray-700">
-                        Collect verified reviews and build a reputation as a trusted cleaning professional.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Easy Scheduling
-                      </h4>
-                      <p className="text-gray-700">
-                        Manage bookings, track schedules, and communicate with clients through one dashboard.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -176,61 +170,49 @@ const HouseCleaning = () => {
                   How to List Your Cleaning Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register with your business details, team size, and service areas you cover."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit identity and background verification documents. Verification takes 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Add service packages, pricing, availability, and photos showcasing your work quality."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Bookings",
+                      desc: "Once verified, start receiving cleaning job bookings and inquiries instantly."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-teal-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register with your business details, team size, and service areas you cover.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit identity and background verification documents. Verification takes 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Add service packages, pricing, availability, and photos showcasing your work quality.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Bookings
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, start receiving cleaning job bookings and inquiries instantly.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 p-6 rounded">
+                <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-teal-600">Pro Tip:</strong> Cleaners with verified profiles, 
                     before/after photos, and excellent reviews get 6x more recurring bookings!
@@ -244,48 +226,52 @@ const HouseCleaning = () => {
                   Benefits of Listing Your Cleaning Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Scale your cleaning business with consistent bookings and recurring clients.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with genuine customers who value professional cleaning services.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Secure Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Get paid promptly through our secure platform after every completed job.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Schedule Management</h4>
-                    <p className="text-gray-700 text-sm">
-                      Optimize your schedule, track earnings, and manage recurring bookings easily.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Training Resources</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access cleaning best practices, product guides, and customer service training.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Top Performer Rewards</h4>
-                    <p className="text-gray-700 text-sm">
-                      Get featured listings, bonus incentives, and priority booking opportunities.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Scale your cleaning business with consistent bookings and recurring clients."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "Work with genuine customers who value professional cleaning services."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Secure Payments",
+                      desc: "Get paid promptly through our secure platform after every completed job."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Schedule Management",
+                      desc: "Optimize your schedule, track earnings, and manage recurring bookings easily."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Training Resources",
+                      desc: "Access cleaning best practices, product guides, and customer service training."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Top Performer Rewards",
+                      desc: "Get featured listings, bonus incentives, and priority booking opportunities."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-teal-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-teal-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

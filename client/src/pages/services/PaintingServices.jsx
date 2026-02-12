@@ -96,10 +96,40 @@ const PaintingServices = () => {
               {/* Why List Your Service */}
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-lg p-8">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800">Why List Your Painting Service on BrightHome?</h3>
-                <div className="space-y-4">
-                  <div className="flex gap-4"><div className="text-3xl">🎯</div><div><h4 className="font-semibold text-lg">High-Value Projects</h4><p className="text-gray-700">Access residential and commercial painting projects with competitive budgets.</p></div></div>
-                  <div className="flex gap-4"><div className="text-3xl">💼</div><div><h4 className="font-semibold text-lg">Steady Work Flow</h4><p className="text-gray-700">Get consistent painting jobs throughout the year from verified clients.</p></div></div>
-                  <div className="flex gap-4"><div className="text-3xl">🏆</div><div><h4 className="font-semibold text-lg">Showcase Your Portfolio</h4><p className="text-gray-700">Display before/after photos and build credibility with customer reviews.</p></div></div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "High-Value Projects",
+                      desc: "Access residential and commercial painting projects with competitive budgets."
+                    },
+                    {
+                      icon: "💼",
+                      title: "Steady Work Flow",
+                      desc: "Get consistent painting jobs throughout the year from verified clients."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Showcase Your Portfolio",
+                      desc: "Display before/after photos and build credibility with customer reviews."
+                    }
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="animate-slideUpIn hover:scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md group transition-all"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="text-3xl mb-3 group-hover:animate-iconPulse" style={{ animationDelay: `${index * 100}ms` }}>
+                        {item.icon}
+                      </div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-purple-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -107,10 +137,42 @@ const PaintingServices = () => {
               <div className="bg-white rounded-2xl shadow-lg p-8">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800">How to List Your Painting Service</h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4"><div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</div><div><h4 className="font-semibold text-lg mb-2">Register Your Business</h4><p className="text-gray-700">Sign up with business credentials and previous work portfolio.</p></div></div>
-                  <div className="flex gap-4"><div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">2</div><div><h4 className="font-semibold text-lg mb-2">Get Verified</h4><p className="text-gray-700">Submit ID proof and business documents for quick verification.</p></div></div>
-                  <div className="flex gap-4"><div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">3</div><div><h4 className="font-semibold text-lg mb-2">Upload Your Work</h4><p className="text-gray-700">Add photos of completed projects, service rates, and available areas.</p></div></div>
-                  <div className="flex gap-4"><div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">4</div><div><h4 className="font-semibold text-lg mb-2">Start Getting Projects</h4><p className="text-gray-700">Receive painting job requests and quotes from interested customers.</p></div></div>
+                  {[
+                    {
+                      num: "1",
+                      title: "Register Your Business",
+                      desc: "Sign up with business credentials and previous work portfolio."
+                    },
+                    {
+                      num: "2",
+                      title: "Get Verified",
+                      desc: "Submit ID proof and business documents for quick verification."
+                    },
+                    {
+                      num: "3",
+                      title: "Upload Your Work",
+                      desc: "Add photos of completed projects, service rates, and available areas."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Getting Projects",
+                      desc: "Receive painting job requests and quotes from interested customers."
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex gap-4 animate-detailBounce show:shadow-lg transition-shadow group" style={{ animationDelay: `${index * 150}ms` }}>
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-full flex items-center justify-center font-bold group-hover:scale-110 transition">
+                        {item.num}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-purple-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

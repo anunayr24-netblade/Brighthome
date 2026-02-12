@@ -1,16 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     password: "",
     confirmPassword: "",
-    userType: "user",
+    userType: "customer",
   });
 
   const handleInputChange = (e) => {
@@ -26,8 +27,10 @@ const Register = () => {
       alert("Passwords don't match!");
       return;
     }
+    const targetRoute = formData.userType === "provider" ? "/provider-hub" : "/customer-hub";
     alert("Registration successful! (Demo)");
     console.log("Register Data:", formData);
+    navigate(targetRoute);
   };
 
   return (
@@ -44,34 +47,34 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label className="block text-gray-700 font-semibold mb-2">
-                  I am a:
+                  I want to:
                 </label>
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     type="button"
                     onClick={() =>
-                      setFormData({ ...formData, userType: "user" })
+                      setFormData({ ...formData, userType: "customer" })
                     }
                     className={`py-3 rounded-lg font-semibold transition ${
-                      formData.userType === "user"
+                      formData.userType === "customer"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                     }`}
                   >
-                    Customer
+                    Need a Service
                   </button>
                   <button
                     type="button"
                     onClick={() =>
-                      setFormData({ ...formData, userType: "professional" })
+                      setFormData({ ...formData, userType: "provider" })
                     }
                     className={`py-3 rounded-lg font-semibold transition ${
-                      formData.userType === "professional"
+                      formData.userType === "provider"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                     }`}
                   >
-                    Professional
+                    Provide a Service
                   </button>
                 </div>
               </div>

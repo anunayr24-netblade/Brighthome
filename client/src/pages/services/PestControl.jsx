@@ -123,50 +123,44 @@ const PestControl = () => {
                   Why List Your Pest Control Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Targeted Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners actively seeking pest control solutions in your service area.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Targeted Leads",
+                      desc: "Connect with homeowners actively seeking pest control solutions in your service area."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Grow Your Business",
+                      desc: "Secure regular clients through annual maintenance contracts and seasonal bookings."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Build Credibility",
+                      desc: "Showcase your certifications, success stories, and collect verified customer reviews."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Streamlined Operations",
+                      desc: "Manage appointments, treatment schedules, and follow-ups through our platform."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-green-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Grow Your Business
-                      </h4>
-                      <p className="text-gray-700">
-                        Secure regular clients through annual maintenance contracts and seasonal bookings.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Build Credibility
-                      </h4>
-                      <p className="text-gray-700">
-                        Showcase your certifications, success stories, and collect verified customer reviews.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Streamlined Operations
-                      </h4>
-                      <p className="text-gray-700">
-                        Manage appointments, treatment schedules, and follow-ups through our platform.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -176,61 +170,49 @@ const PestControl = () => {
                   How to List Your Pest Control Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register with your business details, pest control license, and insurance documentation."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit required licenses and certifications for verification. Takes 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Add service packages, treatment methods, chemicals used, pricing, and service areas."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Leads",
+                      desc: "Once verified, receive booking requests for inspections and pest control treatments."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-green-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register with your business details, pest control license, and insurance documentation.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit required licenses and certifications for verification. Takes 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Add service packages, treatment methods, chemicals used, pricing, and service areas.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, receive booking requests for inspections and pest control treatments.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-green-50 border-l-4 border-green-600 p-6 rounded">
+                <div className="mt-8 bg-green-50 border-l-4 border-green-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-green-600">Pro Tip:</strong> Providers with certifications, 
                     detailed treatment info, and strong reviews get 5x more annual contract bookings!
@@ -244,48 +226,52 @@ const PestControl = () => {
                   Benefits of Listing Your Pest Control Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Expand your customer base with steady leads and recurring maintenance contracts.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with genuine property owners who value professional pest management.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Secure Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Receive guaranteed payments securely through our platform after service completion.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Service Tracking</h4>
-                    <p className="text-gray-700 text-sm">
-                      Track treatments, schedule follow-ups, and manage recurring service contracts.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Industry Resources</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access pest management guides, safety protocols, and business growth training.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Recognition</h4>
-                    <p className="text-gray-700 text-sm">
-                      Top-rated providers get featured placement and exclusive partnership benefits.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Expand your customer base with steady leads and recurring maintenance contracts."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "Work with genuine property owners who value professional pest management."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Secure Payments",
+                      desc: "Receive guaranteed payments securely through our platform after service completion."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Service Tracking",
+                      desc: "Track treatments, schedule follow-ups, and manage recurring service contracts."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Industry Resources",
+                      desc: "Access pest management guides, safety protocols, and business growth training."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Recognition",
+                      desc: "Top-rated providers get featured placement and exclusive partnership benefits."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-green-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-green-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

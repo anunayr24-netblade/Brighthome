@@ -123,50 +123,44 @@ const PackersMovers = () => {
                   Why List Your Packing & Moving Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Reach Thousands of Customers
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners and businesses actively looking for moving services in your area.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Reach Thousands of Customers",
+                      desc: "Connect with homeowners and businesses actively looking for moving services in your area."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Increase Your Revenue",
+                      desc: "Get quality leads and booking requests directly from verified customers ready to hire."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Build Your Reputation",
+                      desc: "Showcase your work, collect reviews, and establish yourself as a trusted service provider."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Easy Management",
+                      desc: "Manage bookings, respond to inquiries, and update your profile with our simple dashboard."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-blue-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Increase Your Revenue
-                      </h4>
-                      <p className="text-gray-700">
-                        Get quality leads and booking requests directly from verified customers ready to hire.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Build Your Reputation
-                      </h4>
-                      <p className="text-gray-700">
-                        Showcase your work, collect reviews, and establish yourself as a trusted service provider.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Easy Management
-                      </h4>
-                      <p className="text-gray-700">
-                        Manage bookings, respond to inquiries, and update your profile with our simple dashboard.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -176,61 +170,49 @@ const PackersMovers = () => {
                   How to List Your Packing & Moving Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register as a service provider with your business details, licenses, and insurance documents."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit required documents for background verification. This typically takes 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Add photos of your vehicles, team, past projects, service areas, and pricing information."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Leads",
+                      desc: "Once verified, you'll start receiving booking requests and customer inquiries instantly."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-blue-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register as a service provider with your business details, licenses, and insurance documents.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit required documents for background verification. This typically takes 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Add photos of your vehicles, team, past projects, service areas, and pricing information.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, you'll start receiving booking requests and customer inquiries instantly.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+                <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-blue-600">Pro Tip:</strong> Providers with complete profiles, 
                     verified documents, and positive reviews get 3x more booking requests!
@@ -244,48 +226,52 @@ const PackersMovers = () => {
                   Benefits of Listing Your Moving Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Expand your customer base and grow your business with consistent lead flow.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      All customers on our platform are verified, reducing no-show appointments.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Secure Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Get paid securely through our platform with multiple payment options.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Analytics Dashboard</h4>
-                    <p className="text-gray-700 text-sm">
-                      Track your performance, earnings, and customer feedback in real-time.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Free Training</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access business tips, customer service training, and industry best practices.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Recognition</h4>
-                    <p className="text-gray-700 text-sm">
-                      Top performers get featured listings and exclusive partnership opportunities.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Expand your customer base and grow your business with consistent lead flow."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "All customers on our platform are verified, reducing no-show appointments."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Secure Payments",
+                      desc: "Get paid securely through our platform with multiple payment options."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Analytics Dashboard",
+                      desc: "Track your performance, earnings, and customer feedback in real-time."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Free Training",
+                      desc: "Access business tips, customer service training, and industry best practices."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Recognition",
+                      desc: "Top performers get featured listings and exclusive partnership opportunities."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-blue-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-blue-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

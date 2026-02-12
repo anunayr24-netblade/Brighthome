@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/common/Header";
 import Footer from "../../components/common/Footer";
+import CarpentryImage from "../../assets/images/Carpentry.jpg";
 
 const Carpenter = () => {
   const exampleProviders = [
@@ -14,8 +15,13 @@ const Carpenter = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-20 px-6">
-        <div className="container mx-auto">
+      <section className="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-20 px-6 relative overflow-hidden" style={{
+        backgroundImage: `url(${CarpentryImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-600/90 to-orange-600/90"></div>
+        <div className="container mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <Link to="/services" className="text-white/80 hover:text-white transition">
               Services
@@ -70,12 +76,10 @@ const Carpenter = () => {
 
       {/* Main Content */}
       <section className="py-12 px-6">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Left Column - Service Details */}
-            <div className="lg:col-span-2 space-y-8">
+        <div className="container mx-auto max-w-4xl">
+          <div className="space-y-8">
               {/* About Service */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="py-8 border-b border-gray-200">
                 <h2 className="text-3xl font-bold mb-4 text-gray-800">
                   About Carpentry Services
                 </h2>
@@ -93,26 +97,38 @@ const Carpenter = () => {
               </div>
 
               {/* Services Included */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="py-8 border-b border-gray-200">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800">Services Included</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                    "Custom Furniture Making",
-                    "Furniture Repair",
-                    "Door Installation & Repair",
-                    "Window Fitting",
-                    "Kitchen Cabinets",
-                    "Wardrobes & Storage",
-                    "Wooden Flooring",
-                    "Deck Building",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                        <span className="text-green-600 font-bold">✓</span>
+                <div className="flex gap-12 items-start">
+                  {/* Services Grid 2x1 */}
+                  <div className="flex-1 grid grid-cols-2 gap-6">
+                    {[
+                      "Custom Furniture Making",
+                      "Furniture Repair",
+                      "Door Installation & Repair",
+                      "Window Fitting",
+                      "Kitchen Cabinets",
+                      "Wardrobes & Storage",
+                      "Wooden Flooring",
+                      "Deck Building",
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-center gap-3 bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold">✓</span>
+                        </div>
+                        <span className="text-gray-800 font-medium text-sm">{item}</span>
                       </div>
-                      <span className="text-gray-700">{item}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* Image */}
+                  <div className="flex-1 flex items-center justify-end">
+                    <img 
+                      src={CarpentryImage} 
+                      alt="Carpenter Services"
+                      className="rounded-xl shadow-lg w-full max-w-sm object-cover"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -122,50 +138,44 @@ const Carpenter = () => {
                   Why List Your Carpentry Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Premium Project Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners seeking quality carpentry work for their homes and offices.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Premium Project Leads",
+                      desc: "Connect with homeowners seeking quality carpentry work for their homes and offices."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Increase Project Value",
+                      desc: "Access high-value custom furniture and woodwork projects that boost your revenue."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Showcase Your Craftsmanship",
+                      desc: "Build a portfolio of work, collect reviews, and establish yourself as a master carpenter."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Simple Project Management",
+                      desc: "Manage inquiries, share quotes, and update project progress all through our platform."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-amber-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Increase Project Value
-                      </h4>
-                      <p className="text-gray-700">
-                        Access high-value custom furniture and woodwork projects that boost your revenue.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Showcase Your Craftsmanship
-                      </h4>
-                      <p className="text-gray-700">
-                        Build a portfolio of work, collect reviews, and establish yourself as a master carpenter.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Simple Project Management
-                      </h4>
-                      <p className="text-gray-700">
-                        Manage inquiries, share quotes, and update project progress all through our platform.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -175,61 +185,49 @@ const Carpenter = () => {
                   How to List Your Carpentry Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register with your business details, experience, and specialization areas."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit identity proof and references for background verification within 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Upload photos of completed projects, your workshop, specialties, and pricing details."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Leads",
+                      desc: "Once verified, start receiving project inquiries and custom furniture requests immediately."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-amber-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register with your business details, experience, and specialization areas.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit identity proof and references for background verification within 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Upload photos of completed projects, your workshop, specialties, and pricing details.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, start receiving project inquiries and custom furniture requests immediately.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-amber-50 border-l-4 border-amber-600 p-6 rounded">
+                <div className="mt-8 bg-amber-50 border-l-4 border-amber-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-amber-600">Pro Tip:</strong> Carpenters with detailed portfolios, 
                     project photos, and excellent reviews get 5x more project inquiries!
@@ -243,48 +241,52 @@ const Carpenter = () => {
                   Benefits of Listing Your Carpentry Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Expand your customer base with consistent flow of custom furniture and repair projects.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with serious customers who value quality craftsmanship and fair pricing.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Secure Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Receive payments securely through our platform with milestone-based payment options.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Portfolio Showcase</h4>
-                    <p className="text-gray-700 text-sm">
-                      Display your best work, track project history, and attract premium clients.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Free Resources</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access design trends, pricing guides, and business development resources.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Recognition</h4>
-                    <p className="text-gray-700 text-sm">
-                      Top craftsmen get featured profiles, priority leads, and partnership opportunities.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Expand your customer base with consistent flow of custom furniture and repair projects."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "Work with serious customers who value quality craftsmanship and fair pricing."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Secure Payments",
+                      desc: "Receive payments securely through our platform with milestone-based payment options."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Portfolio Showcase",
+                      desc: "Display your best work, track project history, and attract premium clients."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Free Resources",
+                      desc: "Access design trends, pricing guides, and business development resources."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Recognition",
+                      desc: "Top craftsmen get featured profiles, priority leads, and partnership opportunities."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-amber-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-amber-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -323,65 +325,66 @@ const Carpenter = () => {
                 </div>
               </div>
             </div>
+        </div>
+      </section>
 
-            {/* Right Column - CTA Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-6 space-y-6">
-                {/* Register CTA */}
-                <div className="bg-gradient-to-br from-amber-600 to-orange-600 text-white rounded-2xl shadow-xl p-8">
-                  <h3 className="text-2xl font-bold mb-4">Ready to Join?</h3>
-                  <p className="mb-6 text-white/90">
-                    Start receiving carpentry project requests within 24 hours
-                  </p>
-                  <Link
-                    to="/become-partner"
-                    className="block w-full bg-white text-amber-600 py-3 rounded-lg hover:bg-gray-100 transition font-bold text-center"
-                  >
-                    Register Now
-                  </Link>
-                  <div className="mt-6 pt-6 border-t border-white/20">
-                    <div className="text-sm space-y-2">
-                      <div className="flex items-center gap-2">
-                        <span>✓</span>
-                        <span>Free Registration</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span>✓</span>
-                        <span>No Hidden Charges</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span>✓</span>
-                        <span>Cancel Anytime</span>
-                      </div>
-                    </div>
+      {/* CTA Section */}
+      <section className="py-16 px-6 bg-gradient-to-br from-amber-50 to-orange-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Register CTA */}
+            <div className="bg-gradient-to-br from-amber-600 to-orange-600 text-white rounded-2xl shadow-xl p-8">
+              <h3 className="text-2xl font-bold mb-4">Ready to Join?</h3>
+              <p className="mb-6 text-white/90">
+                Start receiving carpentry project requests within 24 hours
+              </p>
+              <Link
+                to="/become-partner"
+                className="block w-full bg-white text-amber-600 py-3 rounded-lg hover:bg-gray-100 transition font-bold text-center"
+              >
+                Register Now
+              </Link>
+              <div className="mt-6 pt-6 border-t border-white/20">
+                <div className="text-sm space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span>✓</span>
+                    <span>Free Registration</span>
                   </div>
-                </div>
-
-                {/* Contact Support */}
-                <div className="bg-white rounded-2xl shadow-lg p-6">
-                  <h4 className="font-bold text-lg mb-4">Need Help?</h4>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Have questions about listing your service? Our team is here to help!
-                  </p>
-                  <button className="w-full bg-gray-100 text-gray-800 py-2 rounded-lg hover:bg-gray-200 transition font-semibold">
-                    Contact Support
-                  </button>
-                </div>
-
-                {/* Pricing Info */}
-                <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-                  <h4 className="font-bold text-lg mb-3 text-green-800">
-                    💰 Transparent Pricing
-                  </h4>
-                  <p className="text-gray-700 text-sm mb-3">
-                    Only pay when you get a confirmed booking. No subscription fees!
-                  </p>
-                  <div className="text-2xl font-bold text-green-600">
-                    8-12% Commission
+                  <div className="flex items-center gap-2">
+                    <span>✓</span>
+                    <span>No Hidden Charges</span>
                   </div>
-                  <div className="text-xs text-gray-600 mt-1">Per successful booking</div>
+                  <div className="flex items-center gap-2">
+                    <span>✓</span>
+                    <span>Cancel Anytime</span>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            {/* Contact Support */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <h4 className="font-bold text-lg mb-4">Need Help?</h4>
+              <p className="text-gray-600 text-sm mb-4">
+                Have questions about listing your service? Our team is here to help!
+              </p>
+              <button className="w-full bg-gray-100 text-gray-800 py-2 rounded-lg hover:bg-gray-200 transition font-semibold">
+                Contact Support
+              </button>
+            </div>
+
+            {/* Pricing Info */}
+            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
+              <h4 className="font-bold text-lg mb-3 text-green-800">
+                💰 Transparent Pricing
+              </h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Only pay when you get a confirmed booking. No subscription fees!
+              </p>
+              <div className="text-2xl font-bold text-green-600">
+                8-12% Commission
+              </div>
+              <div className="text-xs text-gray-600 mt-1">Per successful booking</div>
             </div>
           </div>
         </div>

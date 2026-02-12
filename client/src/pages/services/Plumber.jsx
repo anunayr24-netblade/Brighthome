@@ -123,50 +123,44 @@ const Plumber = () => {
                   Why List Your Plumbing Service on BrightHome?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Consistent Lead Flow
-                      </h4>
-                      <p className="text-gray-700">
-                        Connect with homeowners and businesses seeking reliable plumbers in your service area daily.
-                      </p>
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Consistent Lead Flow",
+                      desc: "Connect with homeowners and businesses seeking reliable plumbers in your service area daily."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Boost Your Income",
+                      desc: "Receive high-quality leads and emergency job requests from verified customers ready to pay."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Grow Your Reputation",
+                      desc: "Build trust with verified reviews and establish your business as a go-to plumbing expert."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Simple Job Management",
+                      desc: "Accept jobs, schedule appointments, and manage customer communication all in one place."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-slideUpIn hover-scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all group"
+                      style={{animationDelay: `${index * 100}ms`}}
+                    >
+                      <div className="text-4xl group-hover:animate-iconPulse">{item.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-blue-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Boost Your Income
-                      </h4>
-                      <p className="text-gray-700">
-                        Receive high-quality leads and emergency job requests from verified customers ready to pay.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Grow Your Reputation
-                      </h4>
-                      <p className="text-gray-700">
-                        Build trust with verified reviews and establish your business as a go-to plumbing expert.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Simple Job Management
-                      </h4>
-                      <p className="text-gray-700">
-                        Accept jobs, schedule appointments, and manage customer communication all in one place.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -176,61 +170,49 @@ const Plumber = () => {
                   How to List Your Plumbing Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register as a service provider with your business details, plumbing license, and insurance."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit required documents for background verification. Typically completed within 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Add photos of completed work, service areas, certifications, and competitive pricing."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Leads",
+                      desc: "Once verified, you'll immediately start receiving job requests and customer inquiries."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex gap-4 animate-detailBounce hover:shadow-lg transition-shadow group"
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center font-bold shadow-md group-hover:scale-110 transition-transform">
+                        {item.num}
+                      </div>
+                      <div className="group-hover:translate-x-1 transition-transform">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-blue-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register as a service provider with your business details, plumbing license, and insurance.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit required documents for background verification. Typically completed within 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Add photos of completed work, service areas, certifications, and competitive pricing.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Leads
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, you'll immediately start receiving job requests and customer inquiries.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+                <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded animate-slideUpIn" style={{animationDelay: "600ms"}}>
                   <p className="text-gray-700">
                     <strong className="text-blue-600">Pro Tip:</strong> Plumbers with complete profiles, 
                     verified licenses, and 5-star reviews get 4x more job requests!
@@ -244,48 +226,52 @@ const Plumber = () => {
                   Benefits of Listing Your Plumbing Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Scale your plumbing business with steady customer flow and emergency job opportunities.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with verified customers, reducing time-wasters and ensuring payment security.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Secure Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Get paid quickly through our secure platform with multiple payment options available.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Analytics Dashboard</h4>
-                    <p className="text-gray-700 text-sm">
-                      Monitor your job history, earnings, customer ratings, and business performance metrics.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Free Resources</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access business tips, pricing guides, and technical training resources to enhance skills.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Top Performer Benefits</h4>
-                    <p className="text-gray-700 text-sm">
-                      Get featured listings, priority job alerts, and exclusive partnership opportunities.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Scale your plumbing business with steady customer flow and emergency job opportunities."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "Work with verified customers, reducing time-wasters and ensuring payment security."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Secure Payments",
+                      desc: "Get paid quickly through our secure platform with multiple payment options available."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Analytics Dashboard",
+                      desc: "Monitor your job history, earnings, customer ratings, and business performance metrics."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Free Resources",
+                      desc: "Access business tips, pricing guides, and technical training resources to enhance skills."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Top Performer Benefits",
+                      desc: "Get featured listings, priority job alerts, and exclusive partnership opportunities."
+                    }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white rounded-xl p-5 shadow hover:shadow-xl animate-scaleIn hover-scale-105 group transition-all border border-transparent hover:border-blue-200"
+                      style={{animationDelay: `${index * 80}ms`}}
+                    >
+                      <div className="text-4xl mb-3 group-hover:animate-iconPulse inline-block">{item.icon}</div>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-blue-600 transition">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

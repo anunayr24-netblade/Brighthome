@@ -118,55 +118,49 @@ const ACRepair = () => {
               </div>
 
               {/* Why List Your Service */}
-              <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl shadow-lg p-8">
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl shadow-lg p-8">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800">
                   Why List Your AC Service on BrightHome?
                 </h3>
-                <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="text-3xl">🎯</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Year-Round Demand
+                <div className="grid md:grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: "🎯",
+                      title: "Year-Round Demand",
+                      desc: "Connect with customers needing AC services throughout the year, especially in summer."
+                    },
+                    {
+                      icon: "💰",
+                      title: "Multiple Revenue Streams",
+                      desc: "Earn from installations, repairs, servicing, and annual maintenance contracts."
+                    },
+                    {
+                      icon: "⭐",
+                      title: "Build Customer Loyalty",
+                      desc: "Collect reviews, secure repeat customers, and grow your local reputation."
+                    },
+                    {
+                      icon: "📱",
+                      title: "Easy Job Management",
+                      desc: "Schedule appointments, track service history, and manage customer calls effortlessly."
+                    }
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="animate-slideUpIn hover:scale-105 bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-sm hover:shadow-md group transition-all"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="text-3xl mb-3 group-hover:animate-iconPulse" style={{ animationDelay: `${index * 100}ms` }}>
+                        {item.icon}
+                      </div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-1 group-hover:text-red-600 transition">
+                        {item.title}
                       </h4>
                       <p className="text-gray-700">
-                        Connect with customers needing AC services throughout the year, especially in summer.
+                        {item.desc}
                       </p>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">💰</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Multiple Revenue Streams
-                      </h4>
-                      <p className="text-gray-700">
-                        Earn from installations, repairs, servicing, and annual maintenance contracts.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">⭐</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Build Customer Loyalty
-                      </h4>
-                      <p className="text-gray-700">
-                        Collect reviews, secure repeat customers, and grow your local reputation.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="text-3xl">📱</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-1">
-                        Easy Job Management
-                      </h4>
-                      <p className="text-gray-700">
-                        Schedule appointments, track service history, and manage customer calls effortlessly.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -176,63 +170,47 @@ const ACRepair = () => {
                   How to List Your AC Service
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">
-                      1
+                  {[
+                    {
+                      num: "1",
+                      title: "Create Your Account",
+                      desc: "Register with your business details, technician certifications, and service areas."
+                    },
+                    {
+                      num: "2",
+                      title: "Complete Verification",
+                      desc: "Submit technician certifications and identity proof for verification within 24-48 hours."
+                    },
+                    {
+                      num: "3",
+                      title: "Build Your Profile",
+                      desc: "Add supported brands, service types, pricing, spare parts availability, and photos."
+                    },
+                    {
+                      num: "4",
+                      title: "Start Receiving Calls",
+                      desc: "Once verified, receive AC repair and installation requests immediately."
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex gap-4 animate-detailBounce show:shadow-lg transition-shadow group" style={{ animationDelay: `${index * 150}ms` }}>
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 text-white rounded-full flex items-center justify-center font-bold group-hover:scale-110 transition">
+                        {item.num}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-red-600 transition">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-700">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Create Your Account
-                      </h4>
-                      <p className="text-gray-700">
-                        Register with your business details, technician certifications, and service areas.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Complete Verification
-                      </h4>
-                      <p className="text-gray-700">
-                        Submit technician certifications and identity proof for verification within 24-48 hours.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Build Your Profile
-                      </h4>
-                      <p className="text-gray-700">
-                        Add supported brands, service types, pricing, spare parts availability, and photos.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800 mb-2">
-                        Start Receiving Calls
-                      </h4>
-                      <p className="text-gray-700">
-                        Once verified, receive AC repair and installation requests immediately.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 bg-cyan-50 border-l-4 border-cyan-600 p-6 rounded">
+                <div className="mt-8 bg-red-50 border-l-4 border-red-600 p-6 rounded animate-slideUpIn" style={{ animationDelay: `600ms` }}>
                   <p className="text-gray-700">
-                    <strong className="text-cyan-600">Pro Tip:</strong> Technicians offering emergency service, 
+                    <strong className="text-red-600">Pro Tip:</strong> Technicians offering emergency service, 
                     genuine parts, and warranties get 5x more bookings during peak season!
                   </p>
                 </div>
@@ -244,48 +222,54 @@ const ACRepair = () => {
                   Benefits of Listing Your AC Services
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📈</div>
-                    <h4 className="font-semibold text-lg mb-2">Business Growth</h4>
-                    <p className="text-gray-700 text-sm">
-                      Expand your customer base with consistent service requests all year round.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🛡️</div>
-                    <h4 className="font-semibold text-lg mb-2">Verified Customers</h4>
-                    <p className="text-gray-700 text-sm">
-                      Work with genuine customers who need urgent AC repairs and quality service.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">💳</div>
-                    <h4 className="font-semibold text-lg mb-2">Instant Payments</h4>
-                    <p className="text-gray-700 text-sm">
-                      Receive quick payments through our secure platform after service completion.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="font-semibold text-lg mb-2">Service Tracking</h4>
-                    <p className="text-gray-700 text-sm">
-                      Track service history, manage AMC contracts, and schedule preventive maintenance.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🎓</div>
-                    <h4 className="font-semibold text-lg mb-2">Technical Training</h4>
-                    <p className="text-gray-700 text-sm">
-                      Access product manuals, troubleshooting guides, and technician training resources.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-5 shadow">
-                    <div className="text-3xl mb-3">🏆</div>
-                    <h4 className="font-semibold text-lg mb-2">Recognition</h4>
-                    <p className="text-gray-700 text-sm">
-                      Top technicians get featured profiles, priority leads, and brand partnerships.
-                    </p>
-                  </div>
+                  {[
+                    {
+                      icon: "📈",
+                      title: "Business Growth",
+                      desc: "Expand your customer base with consistent service requests all year round."
+                    },
+                    {
+                      icon: "🛡️",
+                      title: "Verified Customers",
+                      desc: "Work with genuine customers who need urgent AC repairs and quality service."
+                    },
+                    {
+                      icon: "💳",
+                      title: "Instant Payments",
+                      desc: "Receive quick payments through our secure platform after service completion."
+                    },
+                    {
+                      icon: "📊",
+                      title: "Service Tracking",
+                      desc: "Track service history, manage AMC contracts, and schedule preventive maintenance."
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Technical Training",
+                      desc: "Access product manuals, troubleshooting guides, and technician training resources."
+                    },
+                    {
+                      icon: "🏆",
+                      title: "Recognition",
+                      desc: "Top technicians get featured profiles, priority leads, and brand partnerships."
+                    }
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="hover:shadow-xl animate-scaleIn hover:scale-105 group transition-all border border-transparent hover:border-red-200 bg-white rounded-xl p-5 shadow"
+                      style={{ animationDelay: `${index * 80}ms` }}
+                    >
+                      <div className="text-3xl mb-3 group-hover:animate-iconPulse" style={{ animationDelay: `${index * 80}ms` }}>
+                        {item.icon}
+                      </div>
+                      <h4 className="font-semibold text-lg mb-2 group-hover:text-red-600">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

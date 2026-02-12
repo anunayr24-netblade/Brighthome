@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    userType: "customer",
   });
 
   const handleInputChange = (e) => {
@@ -18,8 +20,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const targetRoute = formData.userType === "provider" ? "/provider-hub" : "/customer-hub";
     alert("Login successful! (Demo)");
     console.log("Login Data:", formData);
+    navigate(targetRoute);
   };
 
   return (
@@ -34,6 +38,36 @@ const Login = () => {
             </h1>
 
             <form onSubmit={handleSubmit}>
+              <div className="mb-6">
+                <label className="block text-gray-700 font-semibold mb-2">
+                  I want to:
+                </label>
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, userType: "customer" })}
+                    className={`py-3 rounded-lg font-semibold transition ${
+                      formData.userType === "customer"
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
+                  >
+                    Need a Service
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, userType: "provider" })}
+                    className={`py-3 rounded-lg font-semibold transition ${
+                      formData.userType === "provider"
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
+                  >
+                    Provide a Service
+                  </button>
+                </div>
+              </div>
+
               <div className="mb-6">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Email Address
